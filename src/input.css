@@ -1,0 +1,146 @@
+@import "tailwindcss"; 
+
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("../assets/fonts/GT-Walsheim-Ultra-Light-Trial-BF651b7fc72b236.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("../assets/fonts/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("../assets/fonts/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("../assets/fonts/GT-Walsheim-Ultra-Bold-Trial-BF651b7fc6c21e5.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} 
+
+
+@theme {
+  /* 2. Brand Colors Definition */
+  --color-primary-blue: #00587C;
+  --color-cyan: #00AFD7;
+  --color-body-text: #202020;
+  --color-white: #FFFFFF;
+  --color-cream: #FEF6EF;
+  --color-light-blue: #C3E7F4;
+  --color-lime: #CEDC00; 
+  --color-gray:#F0F0F0; 
+  --color-cream-bold:#F4F0F2;
+
+  /* Font Family Config */
+  --font-gt-walsheim: "GT Walsheim", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-gt-walsheim);
+    font-weight: 300; /* Light weight for body text by default */
+    color: var(--color-body-text);
+  }
+}
+
+@layer components {
+  /* 3. Typography Classes (Responsive sizes & line heights) */
+  .heading-1 {
+    @apply text-[40px] leading-[1.2] md:text-[48px] lg:text-[58px] 2xl:text-[64px] font-bold text-primary-blue;
+  }
+
+  .heading-2 {
+    @apply text-[32px] leading-[1.25] md:text-[38px] lg:text-[42px] 2xl:text-[46px] font-bold text-primary-blue;
+  }
+
+  .heading-3 {
+    @apply text-[26px] leading-[1.25] md:text-[30px] lg:text-[32px] 2xl:text-[34px] font-bold text-primary-blue;
+  } 
+  
+
+  .heading-4 {
+    @apply text-[24px] leading-[1.3] md:text-[26px] lg:text-[28px] 2xl:text-[30px] font-bold text-primary-blue;
+  }
+
+  .heading-5 {
+    @apply text-[20px] leading-[1.35] md:text-[22px] lg:text-[24px] 2xl:text-[24px] font-bold text-primary-blue;
+  }
+
+  .heading-6 {
+    @apply text-[18px] leading-[1.4] md:text-[18px] lg:text-[20px] 2xl:text-[20px] font-bold text-primary-blue;
+  }
+
+  .body-text {
+    @apply text-[18px] leading-[1.5] lg:text-[20px] font-light text-body-text;
+  }
+
+  .small-text {
+    @apply text-[16px] leading-[1.5] font-normal text-body-text;
+  }
+
+  .medium-text {
+    @apply font-medium text-body-text;
+  }
+
+  /* 4. Section Spacing & Layout Containers */
+  .section-padding {
+    @apply py-[60px] md:py-[80px] lg:py-[100px] 2xl:py-[120px];
+  }
+
+  .section-padding-compact {
+    @apply py-[40px] md:py-[50px] lg:py-[60px];
+  }
+
+  .site-container {
+    @apply mx-auto w-full max-w-[1280px] px-[20px] md:px-[32px] lg:px-[40px];
+  }
+
+  /* 5. Reusable Button Classes */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-cyan font-medium rounded-md transition-colors duration-200 ;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-cyan text-primary-blue font-bold rounded-md transition-colors duration-200 ;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary-blue text-primary-blue font-bold rounded-md transition-colors duration-200 hover:bg-primary-blue hover:text-white;
+  }
+} 
+.splide .splide__pagination .splide__pagination__page {
+  background: #D1D5DB !important;
+  opacity: 1 !important; 
+
+}
+
+.splide .splide__pagination .splide__pagination__page.is-active {
+  background:var(--color-cyan) !important;
+  transform: scale(1.2); 
+} 
+.splide .splide__pagination {
+  margin-top: 24px;
+  position: static;
+} 
+/* 2nd page */ 
+/* Custom Splide arrow styling */
+  
