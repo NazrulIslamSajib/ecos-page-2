@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("../assets/fonts/GT-Walsheim-Ultra-Bold-Trial-BF651b7fc6c21e5.otf")
+  src: url("./assets/fonts/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf")
     format("opentype");
   font-weight: 700;
   font-style: normal;
@@ -90,15 +90,14 @@
   }
 
   .body-text {
-    @apply text-[18px] leading-[1.5] lg:text-[20px] font-light text-body-text;
+    @apply text-[18px] leading-[1.5] lg:text-[18px] font-normal text-body-text;
   }
 
   .small-text {
     @apply text-[16px] leading-[1.5] font-normal text-body-text;
-  }
-
-  .medium-text {
-    @apply font-medium text-body-text;
+  } 
+   .small-text-footer {
+    @apply text-[16px] leading-[1.5] font-normal text-primary-blue;
   }
 
   /* 4. Section Spacing & Layout Containers */
@@ -116,7 +115,7 @@
 
   /* 5. Reusable Button Classes */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-cyan font-medium rounded-md transition-colors duration-200 ;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-cyan font-bold text-[14px] rounded-md transition-colors duration-200 ;
   }
 
   .btn-secondary {
