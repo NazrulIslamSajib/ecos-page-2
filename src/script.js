@@ -8,15 +8,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Build thumbnails from the main images (skip the first one)
     var thumbList = thumbEl.querySelector('.splide__list');
+    // Build thumbnails from the main images (skip the first one)
+    var thumbList = thumbEl.querySelector('.splide__list');
     mainEl.querySelectorAll('.splide__slide img').forEach(function (img, i) {
       if (i === 0) return;
+
       var li = document.createElement('li');
-      li.className = 'splide__slide cursor-pointer overflow-hidden rounded-xl';
+      li.className = 'splide__slide overflow-hidden rounded-xl';
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className =
+        'thumb-btn block h-full w-full cursor-pointer ' +
+        'focus-visible:outline focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-primary-blue';
+      btn.setAttribute('aria-label', 'Show image ' + (i + 1) + ': ' + img.alt);
+      btn.dataset.index = i; // index in the MAIN slider
+
       var t = document.createElement('img');
       t.src = img.getAttribute('src');
       t.alt = '';
       t.className = 'block h-full w-full object-cover';
-      li.appendChild(t);
+
+      btn.appendChild(t);
+      li.appendChild(btn);
       thumbList.appendChild(li);
     });
 
@@ -47,8 +61,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
 
     // Thumbnail click -> matching main image (offset 1 because the first image has no thumbnail)
-    thumbs.on('click', function (slide) {
-      main.go(slide.index + 1);
+    thumbEl.querySelectorAll('.thumb-btn').forEach(function (btn, n) {
+      btn.addEventListener('click', function () {
+        main.go(Number(btn.dataset.index));
+      });
+
+      // Keep the focused thumbnail scrolled into view when tabbing
+      btn.addEventListener('focus', function () {
+        thumbs.go(n);
+      });
     });
 
     // Cyan arrow scrolls the thumbnails
@@ -71,10 +92,18 @@ document.addEventListener('DOMContentLoaded', function () {
       breakpoints: {
         1280: { perPage: 5 },
         1024: { perPage: 4 },
-        768:  { perPage: 3 },
-        480:  { perPage: 2 },
+        768: { perPage: 3 },
+        480: { perPage: 2 },
       },
     }).mount();
   }
 
+  const variantButtons = document.querySelectorAll('.variant-btn');
+
+  variantButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      variantButtons.forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+    });
+  });
 });

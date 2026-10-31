@@ -12,21 +12,21 @@
 <body>
 
       <header>
-          <div class="announce-bar bg-cyan text-white">
-            <div class="site-container py-4">
-              <div class="flex justify-center items-center">
-                <div class="flex gap-2 items-center">
-                  <p class="text-white font-bold ">Find the right product for me</p>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                  </svg>
-
-                </div>
-
-              </div>
+        <div class="announce-bar bg-cyan text-white">
+          <div class="site-container py-4">
+            <div class="flex justify-center items-center">
+              <a href="#"
+                class="flex gap-2 items-center text-white font-bold hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                <span>Find the right product for me</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-4" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </a>
             </div>
-          </div> 
+          </div>
+        </div>
+
         <div class="border-b-cyan/20 border-b-1 ">
           <div class="site-container py-6 ">
             <div class="flex justify-between items-center">
@@ -75,14 +75,13 @@
                   </li>
                 </ul>
               </nav>
-              <div class="w-6.25 h-6.25 text-primary-blue ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                  class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round"
+              <button type="button" aria-label="Search" class="w-6.25 h-6.25 text-primary-blue cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="size-6" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-
-              </div>
+                    </svg>
+                </button>
 
 
 
@@ -162,41 +161,33 @@
 
             <!-- Variant options -->
             <fieldset class="mt-8">
-              <legend class="sr-only">Choose a variant</legend>
+                <legend class="sr-only">Choose a variant</legend>
 
-              <div class="flex items-center gap-4">
-                <label class="cursor-pointer">
-                  <input type="radio" name="variant" value="variant-1" class="peer sr-only" checked>
-                  <span
-                    class="block h-8 w-8 rounded-full border-2 border-cyan p-[3px] peer-checked:[&>span]:bg-cyan peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary-blue"><span
-                      class="block h-full w-full rounded-full"></span></span>
-                  <span class="sr-only">Free &amp; Clear</span>
-                </label>
+                <div class="flex items-center gap-4">
+                    <button type="button" aria-pressed="true"
+                    class="variant-btn group block h-8 w-8 cursor-pointer rounded-full border-2 border-cyan p-[3px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
+                    <span class="block h-full w-full rounded-full group-aria-pressed:bg-cyan"></span>
+                    <span class="sr-only">Free &amp; Clear</span>
+                    </button>
 
-                <label class="cursor-pointer">
-                  <input type="radio" name="variant" value="variant-2" class="peer sr-only">
-                  <span
-                    class="block h-8 w-8 rounded-full border-2 border-[#8a6fb0] p-[3px] peer-checked:[&>span]:bg-[#8a6fb0] peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary-blue"><span
-                      class="block h-full w-full rounded-full"></span></span>
-                  <span class="sr-only">Lavender</span>
-                </label>
+                    <button type="button" aria-pressed="false"
+                    class="variant-btn group block h-8 w-8 cursor-pointer rounded-full border-2 border-[#8a6fb0] p-[3px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
+                    <span class="block h-full w-full rounded-full group-aria-pressed:bg-[#8a6fb0]"></span>
+                    <span class="sr-only">Lavender</span>
+                    </button>
 
-                <label class="cursor-pointer">
-                  <input type="radio" name="variant" value="variant-3" class="peer sr-only">
-                  <span
-                    class="block h-8 w-8 rounded-full border-2 border-[#6bb82f] p-[3px] peer-checked:[&>span]:bg-[#6bb82f] peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary-blue"><span
-                      class="block h-full w-full rounded-full"></span></span>
-                  <span class="sr-only">Green Tea</span>
-                </label>
+                    <button type="button" aria-pressed="false"
+                    class="variant-btn group block h-8 w-8 cursor-pointer rounded-full border-2 border-[#6bb82f] p-[3px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
+                    <span class="block h-full w-full rounded-full group-aria-pressed:bg-[#6bb82f]"></span>
+                    <span class="sr-only">Green Tea</span>
+                    </button>
 
-                <label class="cursor-pointer">
-                  <input type="radio" name="variant" value="variant-4" class="peer sr-only">
-                  <span
-                    class="block h-8 w-8 rounded-full border-2 border-[#f08fa5] p-[3px] peer-checked:[&>span]:bg-[#f08fa5] peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary-blue"><span
-                      class="block h-full w-full rounded-full"></span></span>
-                  <span class="sr-only">Magnolia &amp; Lily</span>
-                </label>
-              </div>
+                    <button type="button" aria-pressed="false"
+                    class="variant-btn group block h-8 w-8 cursor-pointer rounded-full border-2 border-[#f08fa5] p-[3px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
+                    <span class="block h-full w-full rounded-full group-aria-pressed:bg-[#f08fa5]"></span>
+                    <span class="sr-only">Magnolia &amp; Lily</span>
+                    </button>
+                </div>
             </fieldset>
 
             <p class="small-text mt-6">Available Sizes:</p>
