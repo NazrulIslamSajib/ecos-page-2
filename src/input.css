@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("/assets/fonts/GT-Walsheim-Ultra-Light-Trial-BF651b7fc72b236.otf")
+  src: url("assets/fonts/GT-Walsheim-Ultra-Light-Trial-BF651b7fc72b236.otf")
     format("opentype");
   font-weight: 300;
   font-style: normal;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("/assets/fonts/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf")
+  src: url("assets/fonts/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf")
     format("opentype");
   font-weight: 400;
   font-style: normal;
@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("/assets/fonts/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf")
+  src: url("assets/fonts/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf")
     format("opentype");
   font-weight: 500;
   font-style: normal;
@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("/assets/fonts/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf")
+  src: url("assets/fonts/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf")
     format("opentype");
   font-weight: 700;
   font-style: normal;
