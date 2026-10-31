@@ -110,7 +110,7 @@
   }
 
   .site-container {
-    @apply mx-auto w-full max-w-[1280px] px-[20px] md:px-[32px] lg:px-[40px];
+    @apply mx-auto w-full  2xl:max-w-[80vw] max-w-[95vw] px-[20px] ;
   }
 
   /* 5. Reusable Button Classes */
