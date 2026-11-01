@@ -620,6 +620,9 @@
   .pb-\[64px\] {
     padding-bottom: 64px;
   }
+  .pb-\[120px\] {
+    padding-bottom: 120px;
+  }
   .text-center {
     text-align: center;
   }
@@ -791,6 +794,9 @@
     .md\:gap-x-16 {
       column-gap: calc(var(--spacing) * 16);
     }
+    .md\:py-72 {
+      padding-block: calc(var(--spacing) * 72);
+    }
     .md\:py-\[72px\] {
       padding-block: 72px;
     }
@@ -840,6 +846,9 @@
     }
     .lg\:gap-16 {
       gap: calc(var(--spacing) * 16);
+    }
+    .lg\:pt-16 {
+      padding-top: calc(var(--spacing) * 16);
     }
     .lg\:pt-\[30px\] {
       padding-top: 30px;
