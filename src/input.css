@@ -1,5 +1,11 @@
 @import "tailwindcss"; 
 
+#main-slider .splide__track,
+#main-slider .splide__list,
+#main-slider .splide__slide {
+  height: 100%;
+}
+
 
 @font-face {
   font-family: "GT Walsheim";
@@ -101,8 +107,8 @@
   }
 
   /* 4. Section Spacing & Layout Containers */
-  .section-padding {
-    @apply py-[60px] md:py-[80px] lg:py-[100px] 2xl:py-[120px];
+   .section-padding {
+    @apply py-[60px] md:py-[64px] lg:py-[64px] 2xl:py-[64px];
   }
 
   .section-padding-compact {
