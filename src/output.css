@@ -599,11 +599,17 @@
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
+  .pt-16 {
+    padding-top: calc(var(--spacing) * 16);
+  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
   }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-\[120px\] {
+    padding-bottom: 120px;
   }
   .text-center {
     text-align: center;
@@ -775,6 +781,9 @@
   @media (width >= 48rem) {
     .md\:gap-x-16 {
       column-gap: calc(var(--spacing) * 16);
+    }
+    .md\:py-72 {
+      padding-block: calc(var(--spacing) * 72);
     }
     .md\:py-\[72px\] {
       padding-block: 72px;
