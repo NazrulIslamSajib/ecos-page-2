@@ -605,9 +605,6 @@
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
   }
-  .pb-\[120px\] {
-    padding-bottom: 120px;
-  }
   .text-center {
     text-align: center;
   }
@@ -779,9 +776,6 @@
     .md\:gap-x-16 {
       column-gap: calc(var(--spacing) * 16);
     }
-    .md\:py-72 {
-      padding-block: calc(var(--spacing) * 72);
-    }
     .md\:py-\[72px\] {
       padding-block: 72px;
     }
@@ -836,6 +830,9 @@
   @media (width >= 96rem) {
     .\32 xl\:text-\[34px\] {
       font-size: 34px;
+    }
+    .\32 xl\:text-\[46px\] {
+      font-size: 46px;
     }
   }
 }
