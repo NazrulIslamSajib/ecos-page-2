@@ -11,70 +11,84 @@
 
 <body>
 
-       <header>
-    <div class="announce-bar bg-cyan text-white">
-      <div class="site-container py-4">
-        <div class="flex justify-center items-center">
-          <a href="#"
-            class="flex gap-2 items-center text-white font-bold hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-            <span>Find the right product for me</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="size-4" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>  
-   <div class="border-b-primary-blue/20 border-b-[1.5px] ">
-    <div class="site-container py-6 ">
-      <div class="flex justify-between items-center">
+   <header class="relative z-50 bg-white">
 
-        <button class="lg:hidden w-7.5 h-6.25 text-primary-blue ">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-            class="size-8">
+  <!-- Announcement bar -->
+  <div class="announce-bar bg-cyan text-white">
+    <div class="site-container py-2 sm:py-3">
+      <div class="flex items-center justify-center">
+        <a href="#"
+          class="flex items-center gap-2 text-center font-bold text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+          <span class="text-[13px] sm:text-[14px]">Find the right product for me</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4 shrink-0" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main bar -->
+  <div class="border-b-[1.5px] border-b-primary-blue/20">
+    <div class="site-container py-4 lg:py-6">
+      <div class="flex items-center justify-between gap-4">
+
+        <!-- Hamburger (mobile / tablet only) -->
+        <button type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="flex size-8 cursor-pointer items-center justify-center text-primary-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue lg:hidden">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="size-8" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="hidden size-8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
         </button>
 
-        <a href="/" class="logo cursor-pointer w-28.5 h-7.5">
-          <img src="assets/ECOS-logo.webp" alt="ECOS home" class="w-full h-auto object-cover" width="114" height="30">
+        <!-- Logo -->
+        <a href="/" class="logo block w-24 shrink-0 cursor-pointer sm:w-28.5">
+          <img src="assets/ECOS-logo.webp" alt="ECOS home" class="h-auto w-full object-cover" width="114"
+            height="30">
         </a>
-        <nav class="lg:block hidden">
-          <ul class="text-primary-blue font-medium small-text lg:flex ">
-            <li class="flex gap-2  items-center px-5 py-2.5">
-              <a href="#" > Products </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden lg:block" aria-label="Main">
+          <ul class="small-text flex font-bold text-primary-blue">
+            <li class="flex items-center gap-2 px-3 py-2.5 xl:px-5">
+              <a href="#">Products</a>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" class="size-4">
+                stroke="currentColor" class="size-4" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
-
-
             </li>
-            <li class=" px-5 py-2.5">
+            <li class="px-3 py-2.5 xl:px-5">
               <a href="#">Blog</a>
             </li>
-            <li class="flex gap-2 items-center  px-5 ">
-              <a href="#">Inside ECOS </a>
+            <li class="flex items-center gap-2 px-3 py-2.5 xl:px-5">
+              <a href="#">Inside ECOS</a>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" class="size-4">
+                stroke="currentColor" class="size-4" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
-
             </li>
-            <li class=" px-5 py-2.5">
+            <li class="px-3 py-2.5 xl:px-5">
               <a href="#">Where To Buy</a>
             </li>
-            <li class=" px-5 py-2.5">
+            <li class="px-3 py-2.5 xl:px-5">
               <a href="#">EN</a>
             </li>
-            <li class=" px-5 py-2.5">
+            <li class="px-3 py-2.5 xl:px-5">
               <a href="#">ES</a>
             </li>
           </ul>
         </nav>
-        <button type="button" aria-label="Search" class="w-6.25 h-6.25 text-primary-blue cursor-pointer">
+
+        <!-- Search -->
+        <button type="button" aria-label="Search"
+          class="flex size-8 cursor-pointer items-center justify-center text-primary-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="size-6" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -82,13 +96,52 @@
           </svg>
         </button>
 
-
-
       </div>
-    </div> 
+    </div>
   </div>
-  </header>
 
+  <!-- Mobile menu -->
+  <div id="mobile-menu" hidden
+    class="absolute inset-x-0 top-full max-h-[calc(100vh-100%)] overflow-y-auto border-b-[1.5px] border-b-primary-blue/20 bg-white shadow-lg lg:hidden">
+    <nav class="site-container py-2" aria-label="Mobile">
+      <ul class="small-text font-bold text-primary-blue">
+
+        <li class="border-b border-primary-blue/10">
+          <a href="#" class="flex items-center justify-between py-4">
+            <span>Products</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-4" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </a>
+        </li>
+
+        <li class="border-b border-primary-blue/10">
+          <a href="#" class="block py-4">Blog</a>
+        </li>
+
+        <li class="border-b border-primary-blue/10">
+          <a href="#" class="flex items-center justify-between py-4">
+            <span>Inside ECOS</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="size-4" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </a>
+        </li>
+
+        <li class="border-b border-primary-blue/10">
+          <a href="#" class="block py-4">Where To Buy</a>
+        </li>
+
+        <li class="flex items-center gap-6 py-4">
+          <a href="#">EN</a>
+          <a href="#">ES</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header> 
   <main id="main" >
     
        <section class="hero-2nd-page section-padding md:pb-[120px]">
