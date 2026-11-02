@@ -103,7 +103,7 @@
     @apply text-[16px] leading-[1.5] font-light text-body-text;
   } 
    .small-text-footer {
-    @apply text-[16px] leading-[1.5] font-light text-primary-blue;
+    @apply text-[16px] leading-[1.5] font-normal text-primary-blue;
   }
 
   /* 4. Section Spacing & Layout Containers */

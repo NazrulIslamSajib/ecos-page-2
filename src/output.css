@@ -642,8 +642,8 @@
   .text-center {
     text-align: center;
   }
-  .text-\[13px\] {
-    font-size: 13px;
+  .text-\[14px\] {
+    font-size: 14px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -872,9 +872,6 @@
     }
     .sm\:py-16 {
       padding-block: calc(var(--spacing) * 16);
-    }
-    .sm\:text-\[14px\] {
-      font-size: 14px;
     }
   }
   @media (width >= 48rem) {
@@ -1119,8 +1116,8 @@
     font-size: 16px;
     --tw-leading: 1.5;
     line-height: 1.5;
-    --tw-font-weight: var(--font-weight-light);
-    font-weight: var(--font-weight-light);
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
     color: var(--color-primary-blue);
   }
   .section-padding {
