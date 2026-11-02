@@ -11,7 +11,8 @@
 
 <body>
 
-   <header class="relative z-50 bg-white">
+  
+    <header class="relative z-50 bg-white">
 
   <!-- Announcement bar -->
   <div class="announce-bar bg-cyan text-white">
@@ -29,58 +30,92 @@
     </div>
   </div>
 
-  <!-- Main bar -->
-  <div class="border-b-[1.5px] border-b-primary-blue/20">
-    <div class="site-container py-4 lg:py-6">
+  <!-- Main bar (relative: desktop submenu panels are positioned against this) -->
+  <div class="relative border-b-[1.5px] border-b-primary-blue/20">
+    <div class="site-container py-4 lg:py-0">
       <div class="flex items-center justify-between gap-4">
 
         <!-- Hamburger (mobile / tablet only) -->
         <button type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false"
           aria-controls="mobile-menu"
           class="flex size-8 cursor-pointer items-center justify-center text-primary-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue lg:hidden">
-          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="size-8" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-            stroke="currentColor" class="hidden size-8" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
 
         <!-- Logo -->
-        <a href="/" class="logo block w-24 shrink-0 cursor-pointer sm:w-28.5">
+        <a href="#" class="logo block w-24 shrink-0 cursor-pointer sm:w-28.5 lg:my-6">
           <img src="assets/ECOS-logo.webp" alt="ECOS home" class="h-auto w-full object-cover" width="114"
             height="30">
         </a>
 
         <!-- Desktop nav -->
-        <nav class="hidden lg:block" aria-label="Main">
-          <ul class="small-text flex font-bold text-primary-blue">
-            <li class="flex items-center gap-2 px-3 py-2.5 xl:px-5">
-              <a href="#">Products</a>
+        <!-- NOTE: do not add "relative" to nav, ul or li. The panels must position against the main bar. -->
+        <nav class="hidden lg:block lg:self-stretch" aria-label="Main">
+          <ul class="small-text flex h-full font-bold text-primary-blue">
+
+            <!-- Products + submenu -->
+            <li class="group flex items-center gap-2 px-3 xl:px-5 transition-colors hover:bg-cyan/15 has-[:focus-visible]:bg-cyan/15">
+              <a href="#" aria-haspopup="true">Products</a>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" class="size-4" aria-hidden="true">
+                stroke="currentColor"
+                class="size-4 transition-transform duration-200 group-hover:rotate-180 group-has-[:focus-visible]:rotate-180"
+                aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
+
+              <div
+                class="invisible absolute left-0 top-full z-40 w-full border-b border-primary-blue/10 bg-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-has-[:focus-visible]:visible group-has-[:focus-visible]:opacity-100">
+                <ul class="site-container flex items-center justify-between gap-4 py-10">
+                  <li><a href="#" class="hover:underline">All Products</a></li>
+                  <li><a href="#" class="hover:underline">New</a></li>
+                  <li><a href="#" class="hover:underline">Laundry</a></li>
+                  <li><a href="#" class="hover:underline">Dishwashing</a></li>
+                  <li><a href="#" class="hover:underline">Hand Soap</a></li>
+                  <li><a href="#" class="hover:underline">Household Cleaners</a></li>
+                  <li><a href="#" class="hover:underline">Pets</a></li>
+                </ul>
+              </div>
             </li>
-            <li class="px-3 py-2.5 xl:px-5">
+
+            <!-- Blog -->
+            <li class="flex items-center px-3 xl:px-5 hover:bg-cyan/15">
               <a href="#">Blog</a>
             </li>
-            <li class="flex items-center gap-2 px-3 py-2.5 xl:px-5">
-              <a href="#">Inside ECOS</a>
+
+            <!-- Inside ECOS + submenu -->
+            <li class="group flex items-center gap-2 px-3 xl:px-5 transition-colors hover:bg-cyan/15 has-[:focus-visible]:bg-cyan/15">
+              <a href="#" aria-haspopup="true">Inside ECOS</a>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" class="size-4" aria-hidden="true">
+                stroke="currentColor"
+                class="size-4 transition-transform duration-200 group-hover:rotate-180 group-has-[:focus-visible]:rotate-180"
+                aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
+
+              <div
+                class="invisible absolute left-0 top-full z-40 w-full border-b border-primary-blue/10 bg-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-has-[:focus-visible]:visible group-has-[:focus-visible]:opacity-100">
+                <ul class="site-container flex items-center justify-between gap-4 py-10">
+                  <li><a href="#" class="hover:underline">Our Story</a></li>
+                  <li><a href="#" class="hover:underline">Safer Cleaning</a></li>
+                  <li><a href="#" class="hover:underline">Sustainability</a></li>
+                  <li><a href="#" class="hover:underline">Transparency</a></li>
+                  <li><a href="#" class="hover:underline">Our Impact</a></li>
+                  <li><a href="#" class="hover:underline">Our People</a></li>
+                  <li><a href="#" class="hover:underline">Safer Choice</a></li>
+                </ul>
+              </div>
             </li>
-            <li class="px-3 py-2.5 xl:px-5">
+
+            <li class="flex items-center px-3 xl:px-5 hover:bg-cyan/15">
               <a href="#">Where To Buy</a>
             </li>
-            <li class="px-3 py-2.5 xl:px-5">
+            <li class="flex items-center px-3 xl:px-5 hover:bg-cyan/15">
               <a href="#">EN</a>
             </li>
-            <li class="px-3 py-2.5 xl:px-5">
+            <li class="flex items-center px-3 xl:px-5 hover:bg-cyan/15">
               <a href="#">ES</a>
             </li>
           </ul>
@@ -88,7 +123,7 @@
 
         <!-- Search -->
         <button type="button" aria-label="Search"
-          class="flex size-8 cursor-pointer items-center justify-center text-primary-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
+          class="flex size-8 cursor-pointer items-center justify-center text-primary-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue lg:my-6">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="size-6" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -98,50 +133,93 @@
 
       </div>
     </div>
+
+    <!-- Mobile menu: full-height left drawer, links centered -->
+<div id="mobile-menu" hidden
+  class="fixed inset-y-0 left-0 z-50 flex h-dvh w-[90%] max-w-md flex-col overflow-y-auto bg-white shadow-lg lg:hidden">
+
+  <!-- Close button (stays at the top) -->
+  <div class="flex shrink-0 justify-end px-6 pt-4 pb-3">
+    <button type="button" id="menu-close" aria-label="Close menu"
+      class="flex size-10 cursor-pointer items-center justify-center text-primary-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-blue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+        stroke="currentColor" class="size-9" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" hidden
-    class="absolute inset-x-0 top-full max-h-[calc(100vh-100%)] overflow-y-auto border-b-[1.5px] border-b-primary-blue/20 bg-white shadow-lg lg:hidden">
-    <nav class="site-container py-2" aria-label="Mobile">
-      <ul class="small-text font-bold text-primary-blue">
+  <!-- my-auto centers the list vertically in the space under the X -->
+  <nav aria-label="Mobile" class="my-auto w-full pb-10">
+    <ul class="small-text font-bold text-primary-blue">
 
-        <li class="border-b border-primary-blue/10">
-          <a href="#" class="flex items-center justify-between py-4">
-            <span>Products</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="size-4" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-            </svg>
-          </a>
-        </li>
+      <!-- Products (accordion) -->
+      <li class="border-b border-primary-blue/10">
+        <button type="button"
+          class="submenu-toggle relative flex w-full cursor-pointer items-center justify-center px-12 py-4 font-bold focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-blue"
+          aria-expanded="false" aria-controls="submenu-products">
+          <span>Products</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="chevron absolute right-6 size-4 transition-transform duration-200"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+        <ul id="submenu-products" hidden class="bg-cyan/15 py-3 font-normal italic">
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">All Products</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">New</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Laundry</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Dishwashing</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Hand Soap</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Household Cleaners</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Pets</a></li>
+        </ul>
+      </li>
 
-        <li class="border-b border-primary-blue/10">
-          <a href="#" class="block py-4">Blog</a>
-        </li>
+      <!-- Blog -->
+      <li class="border-b border-primary-blue/10">
+        <a href="#" class="block px-6 py-4 text-center">Blog</a>
+      </li>
 
-        <li class="border-b border-primary-blue/10">
-          <a href="#" class="flex items-center justify-between py-4">
-            <span>Inside ECOS</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="size-4" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-            </svg>
-          </a>
-        </li>
+      <!-- Inside ECOS (accordion) -->
+      <li class="border-b border-primary-blue/10">
+        <button type="button"
+          class="submenu-toggle relative flex w-full cursor-pointer items-center justify-center px-12 py-4 font-bold focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-blue"
+          aria-expanded="false" aria-controls="submenu-inside">
+          <span>Inside ECOS</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="chevron absolute right-6 size-4 transition-transform duration-200"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+        <ul id="submenu-inside" hidden class="bg-cyan/15 py-3 font-normal italic">
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Our Story</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Safer Cleaning</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Sustainability</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Transparency</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Our Impact</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Our People</a></li>
+          <li><a href="#" class="block px-6 py-2.5 text-center hover:underline">Safer Choice</a></li>
+        </ul>
+      </li>
 
-        <li class="border-b border-primary-blue/10">
-          <a href="#" class="block py-4">Where To Buy</a>
-        </li>
+      <!-- Where To Buy -->
+      <li class="border-b border-primary-blue/10">
+        <a href="#" class="block px-6 py-4 text-center">Where To Buy</a>
+      </li>
 
-        <li class="flex items-center gap-6 py-4">
-          <a href="#">EN</a>
-          <a href="#">ES</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header> 
+      <!-- Language -->
+      <li class="border-b border-primary-blue/10">
+        <a href="#" class="block px-6 py-4 text-center">EN</a>
+      </li>
+      <li class="border-b border-primary-blue/10">
+        <a href="#" class="block px-6 py-4 text-center">ES</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
   <main id="main" >
     
        <section class="hero-2nd-page section-padding md:pb-[120px]">

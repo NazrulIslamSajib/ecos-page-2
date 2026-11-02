@@ -2,32 +2,66 @@ document.addEventListener('DOMContentLoaded', function () {
  /* header*/ 
  /* header*/ 
   const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    const iconOpen = document.getElementById('icon-open');
-    const iconClose = document.getElementById('icon-close');
+      const closeBtn = document.getElementById('menu-close');
+      const menu = document.getElementById('mobile-menu');
+      const submenuToggles = menu.querySelectorAll('.submenu-toggle');
 
-    function setMenu(open) {
-      menu.hidden = !open;
-      toggle.setAttribute('aria-expanded', open);
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      iconOpen.classList.toggle('hidden', open);
-      iconClose.classList.toggle('hidden', !open);
-    }
+      /* ---------- Open / close the drawer ---------- */
+      function setMenu(open, { restoreFocus = false } = {}) {
+        menu.hidden = !open;
+        toggle.setAttribute('aria-expanded', open);
+        document.body.classList.toggle('overflow-hidden', open); // lock page scroll behind the drawer
 
-    toggle.addEventListener('click', () => setMenu(menu.hidden));
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !menu.hidden) {
-        setMenu(false);
-        toggle.focus();
+        if (open) {
+          closeBtn.focus();
+        } else {
+          closeAllSubmenus();
+          if (restoreFocus) toggle.focus();
+        }
       }
-    });
 
-    // Close when resizing up to desktop
-    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
-      if (e.matches) setMenu(false);
-    });
+      toggle.addEventListener('click', () => setMenu(true));
+      closeBtn.addEventListener('click', () => setMenu(false, { restoreFocus: true }));
+
+      /* ---------- Accordion submenus ---------- */
+      function setSubmenu(button, open) {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', open);
+        button.querySelector('.chevron').classList.toggle('rotate-180', open);
+        panel.hidden = !open;
+      }
+
+      function closeAllSubmenus() {
+        submenuToggles.forEach((btn) => setSubmenu(btn, false));
+      }
+
+      submenuToggles.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+          closeAllSubmenus();          // only one open at a time
+          setSubmenu(btn, willOpen);
+        });
+      });
+
+      /* ---------- Close on Escape ---------- */
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menu.hidden) {
+          setMenu(false, { restoreFocus: true });
+        }
+      });
+
+      /* ---------- Close when clicking outside the drawer ---------- */
+      document.addEventListener('click', (e) => {
+        if (!menu.hidden && !menu.contains(e.target) && !toggle.contains(e.target)) {
+          setMenu(false);
+        }
+      });
+
+      /* ---------- Close when resizing up to desktop ---------- */
+      window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+        if (e.matches) setMenu(false);
+      });
+
 
 
 
